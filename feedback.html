@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>FEEDBACK</h1>
+        </div>
+        <div id="errormsg">
+            <h1>PLEASE FILL THE ABOVE FIELD</h1>
+        </div>
+        <div class="feedback">
+            <form method="post" action="feedback.php" onsubmit="return submitfunc();" >
+                <div class="namefield">
+                    <label for="username" id="namebox">NAME</label>
+                    <input type="text" id="nameinput" onclick="myfunc()" onblur="yourfunc()" name="username" placeholder="Enter your name">
+                </div>
+                <div class="therapy-type">
+                    <select name="therapy">
+                        <option value="None" disabled selected hidden>Select your Therapy</option>
+                        <option value="Anxiety">Anxiety</option>
+                        <option value="Depression">Depression</option>
+                        <option value="Diabetes">Diabetes</option>
+                        <option value="Weight loss">Weight Loss</option>
+                        <option value="Aroma">Aroma</option>
+                    </select>
+                </div>
+                <div class="review1">
+                    <label for="therapy-rating">How was the therapy?</label><br>
+                    <input name="therapy-rating" type="number" hidden>
+                    <span class="fa fa-star 1" onclick="check11()"></span>
+                    <span class="fa fa-star 1" onclick="check12()"></span>
+                    <span class="fa fa-star 1" onclick="check13()"></span>
+                    <span class="fa fa-star 1" onclick="check14()"></span>
+                    <span class="fa fa-star 1" onclick="check15()"></span>
+                </div>
+                <div class="review2">
+                    <label for="interface">How was your experience on the webpage?</label><br>
+                    <input name="interface" type="number" hidden>
+                    <span class="fa fa-star 2" onclick="check21()"></span>
+                    <span class="fa fa-star 2" onclick="check22()"></span>
+                    <span class="fa fa-star 2" onclick="check23()"></span>
+                    <span class="fa fa-star 2" onclick="check24()"></span>
+                    <span class="fa fa-star 2" onclick="check25()"></span>
+                </div>
+                <div class="review3">
+                    <label for="overall">How was your overall experience?</label><br>
+                    <input name="overall" type="number" hidden>
+                    <span class="fa fa-star 3" onclick="check31()"></span>
+                    <span class="fa fa-star 3" onclick="check32()"></span>
+                    <span class="fa fa-star 3" onclick="check33()"></span>
+                    <span class="fa fa-star 3" onclick="check34()"></span>
+                    <span class="fa fa-star 3" onclick="check35()"></span>
+                </div>
+                <div class="comment">
+                    <label for="comments" id="comment_label">COMMENT</label>
+                    <textarea name="comments"  class="comment-textarea" onclick="myfunc1()" onblur="yourfunc1()" placeholder="COMMENT"></textarea>
+                </div>
+                <div class="submit-btn">
+                    <button type="submit"  id="subbtn" >SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<style>
+    :root{
+        --start: 90%;
+        --end: 0;
+    }
+    body{
+        background-image: linear-gradient(133deg,rgba(255, 0, 93, 0.9),rgba(0,0,255,0.5));
+        background-repeat:no-repeat;
+        background-position: center;
+        font-family: Arial;
+        font-size: 18px;
+        font-family: bold;
+    }
+
+    #errormsg{
+        font-size: 5px;
+        display: none;
+        position: absolute;
+        color: red;
+        z-index: 2;
+        
+    }
+
+    .heading{
+        position: relative;
+        height: 50px;
+        width: 500px;
+        text-align: center;
+    }
+
+    .container{
+        position: relative;
+        margin: 50px auto;
+        height: 700px;
+        width: 500px;
+        background-color: white;
+        background-repeat:no-repeat;
+        background-position: center;
+        box-shadow: 25px 15px 10px rgba(0,0,0,0.5);
+        padding: 25px;
+    }
+
+    .feedback{
+        position: relative;
+        margin: 5px auto;
+        width: 450px;
+        height: 550px;
+    }
+
+    #namebox{
+        position: relative;
+        top: 10px;
+        display: none;
+        z-index: 1;
+        animation: fly-up 0.15s linear;
+    }
+
+    #nameinput{
+        position: relative;
+        top: 10px;
+        z-index: 0;
+    }
+
+    .namefield{
+        position: relative;
+        top: 10px;
+        height: 50px;
+    }
+
+    .therapy-type{
+        position: relative;
+        top:30px;
+    }
+
+    .review1{
+        position: relative;
+        top: 50px;
+    }
+
+    .review2{
+        position: relative;
+        top: 70px;
+    }
+
+    .review3{
+        position: relative;
+        top: 90px;
+    }
+
+    .comment{
+        position: relative;
+        top: 110px;
+    }
+
+    .comment-textarea{
+        position: relative;
+        top: 10px;
+        width: 250px;
+        height: 100px;
+        resize: none;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+
+    #comment_label{
+        position: relative;
+        top: 10px;
+        display: none;
+        animation: fly-up 0.15s linear;
+        
+    }
+
+    .submit-btn{
+        position: relative;
+        top: 150px;
+        left: 160px;
+        width: fit-content;
+    }
+
+
+    .fa{
+        font-size: 50px;
+        transition: 0.5s;
+    }
+
+    input{
+        width: 100%;
+        border: 0;
+        outline: 0;
+        border-bottom: 2px solid black;
+        font-size: 15px;
+        border-radius: 10px;
+        padding: 4px;
+    }
+
+    button{
+        border: 0;
+        font-size: 25px;
+        margin: 2px auto;
+        padding: 5px;
+        border-radius: 10px;
+        
+    }
+
+    select{
+        border: 0;
+        outline: 0;
+        border-bottom: 2px solid ;
+        font-size: 15px;
+        border-radius: 10px;
+        padding: 4px;
+    }
+
+    @keyframes fly-up {
+        0%{top: 10px;}
+        100%{top: 5px;}
+    }
+
+    
+
+</style>
+
+<script>
+    
+    function myfunc(){
+        document.getElementById("nameinput").placeholder="";
+        document.getElementById("namebox").style.display="block";
+        document.getElementById("namebox").style.top="5px";
+    }
+
+    function yourfunc(){
+        document.getElementById("nameinput").placeholder="Enter your name";
+        document.getElementById("namebox").style.display="none";
+    }
+
+    function myfunc1(){
+        document.getElementsByName("comments")[0].placeholder="";
+        document.getElementById("comment_label").style.display="block";
+        document.getElementById("comment_label").style.top="5px";
+    }
+
+    function yourfunc1(){
+        document.getElementsByName("comments")[0].placeholder="Any Comment";
+        document.getElementById("comment_label").style.display="none";
+    }
+    
+    var star1=document.getElementsByClassName("fa fa-star 1");
+
+    function check11(){
+        document.getElementsByName("therapy-rating")[0].value=1;
+        star1[0].style.color="orange";
+        star1[1].style.color="black";star1[2].style.color="black";
+        star1[3].style.color="black";star1[4].style.color="black";
+    }[0]
+    function check12(){
+        document.getElementsByName("therapy-rating")[0].value=2;
+        star1[0].style.color="orange";star1[1].style.color="orange";
+        star1[2].style.color="black";star1[3].style.color="black";
+        star1[4].style.color="black";
+    }
+    function check13(){
+        document.getElementsByName("therapy-rating")[0].value=3;
+        star1[0].style.color="orange";star1[1].style.color="orange";star1[2].style.color="orange";
+        star1[3].style.color="black";star1[4].style.color="black";
+    }
+    function check14(){
+        document.getElementsByName("therapy-rating")[0].value=4;
+        star1[0].style.color="orange";star1[1].style.color="orange";
+        star1[2].style.color="orange";star1[3].style.color="orange";
+        star1[4].style.color="black";
+    }
+    function check15(){
+        document.getElementsByName("therapy-rating")[0].value=5;
+        star1[0].style.color="orange";star1[1].style.color="orange";
+        star1[2].style.color="orange";star1[3].style.color="orange";
+        star1[4].style.color="orange";
+    }   
+
+    var star2=document.getElementsByClassName("fa fa-star 2");
+    
+    function check21(){
+        document.getElementsByName("interface")[0].value=1;
+        star2[0].style.color="orange";
+        star2[1].style.color="black";star2[2].style.color="black";
+        star2[3].style.color="black";star2[4].style.color="black";
+    }
+    function check22(){
+        document.getElementsByName("interface")[0].value=2;
+        star2[0].style.color="orange";star2[1].style.color="orange";
+        star2[2].style.color="black";star2[3].style.color="black";
+        star2[4].style.color="black";
+    }
+    function check23(){
+        document.getElementsByName("interface")[0].value=3;
+        star2[0].style.color="orange";star2[1].style.color="orange";star2[2].style.color="orange";
+        star2[3].style.color="black";star2[4].style.color="black";
+    }
+    function check24(){
+        document.getElementsByName("interface")[0].value=4;
+        star2[0].style.color="orange";star2[1].style.color="orange";
+        star2[2].style.color="orange";star2[3].style.color="orange";
+        star2[4].style.color="black";
+    }
+    function check25(){
+        document.getElementsByName("interface")[0].value=5;
+        star2[0].style.color="orange";star2[1].style.color="orange";
+        star2[2].style.color="orange";star2[3].style.color="orange";
+        star2[4].style.color="orange";
+    }
+
+    var star3=document.getElementsByClassName("fa fa-star 3");
+
+    function check31(){
+        document.getElementsByName("overall")[0].value=1;
+        star3[0].style.color="orange";
+        star3[1].style.color="black";star3[2].style.color="black";
+        star3[3].style.color="black";star3[4].style.color="black";
+    }
+    function check32(){
+        document.getElementsByName("overall")[0].value=2;
+        star3[0].style.color="orange";star3[1].style.color="orange";
+        star3[2].style.color="black";star3[3].style.color="black";
+        star3[4].style.color="black";
+    }
+    function check33(){
+        document.getElementsByName("overall")[0].value=3;
+        star3[0].style.color="orange";star3[1].style.color="orange";star3[2].style.color="orange";
+        star3[3].style.color="black";star3[4].style.color="black";
+    }
+    function check34(){
+        document.getElementsByName("overall")[0].value=4;
+        star3[0].style.color="orange";star3[1].style.color="orange";
+        star3[2].style.color="orange";star3[3].style.color="orange";
+        star3[4].style.color="black";
+    }
+    function check35(){
+        document.getElementsByName("overall")[0].value=5;
+        star3[0].style.color="orange";star3[1].style.color="orange";
+        star3[2].style.color="orange";star3[3].style.color="orange";
+        star3[4].style.color="orange";
+    }
+    
+    var errorbox=document.getElementById("errormsg");
+    function submitfunc(){
+        if(document.getElementsByName("therapy")[0].value==='None'){
+            errorbox.style.display="block";
+            errorbox.style.top="210px";
+            setTimeout("errorbox.style.display='none'",3000);
+            return false;
+        }
+        else if(document.getElementsByName("therapy-rating")[0].value==0){
+            errorbox.style.display="block";
+            errorbox.style.top="300px";
+            setTimeout("errorbox.style.display='none'",3000);
+            return false;
+        }else if(document.getElementsByName("interface")[0].value==0){
+            errorbox.style.display="block";
+            errorbox.style.top="390px";
+            setTimeout("errorbox.style.display='none'",3000);
+            return false;
+        }
+        else if(document.getElementsByName("overall")[0].value==0){
+            errorbox.style.display="block";
+            errorbox.style.top="480px";
+            setTimeout("errorbox.style.display='none'",3000);
+            return false;
+        }else{
+            return true;
+        }
+    }
+</script>
+</html>

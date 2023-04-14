@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="bar">
+        <div id="progress">
+            <ul>
+                <li>Personal Details</li>
+                <li>Contact Details</li>
+                <li>Additional Details</li>
+            </ul>
+            <div id="errormsg">
+                <h1>Fill In proper details</h1>
+            </div>
+        </div>
+        </div>
+        <form id="service_form">
+            <div id="form1">
+                <input type="text" name="fname" placeholder="First name">
+                <input type="text" name="sname" placeholder="Surname">
+                <input type="number" name="age" placeholder="Age">
+                <select name="gender" title="hello">
+                    <option value="None" disabled selected hidden>Select your Gender</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="N">Prefer not to say</option>
+                </select><br>
+                <button onclick="next1()" name="nextbtn1" class="button-next" type="button">NEXT</button>
+            </div>
+            <div id="form2">
+                <input type="text" name="email" default='' placeholder="Email">
+                <input type="number" name="phone" default=0 placeholder="Phone Number">
+                <div class="btn-container">
+                    <button onclick="back1()" name="backbtn1" class="button-back" type="button">BACK</button>
+                    <button onclick="next2()" name="nextbtn2" class="button-next" type="button">NEXT</button>
+                </div>
+                
+            </div>
+            <div id="form3">
+                <select name="therapy">
+                    <option value="None" disabled selected hidden>Select your Therapy</option>
+                    <option value="Anxiety">Anxiety</option>
+                    <option value="Depression">Depression</option>
+                    <option value="Weight loss">Weight Loss</option>
+                    <option value="Aroma">Aroma</option>
+                </select><br>
+                <div class="btn-container">
+                    <button onclick="back2()" name="backbtn2" class="button-back" type="button">BACK</button>
+                    <button name="submit-btn" class="button-next" formmethod="post" formaction="services form process.php" type="submit">SUBMIT</button>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</body>
+
+<style>
+
+    body{
+        background-image: url("download.jpg");
+        background-size: cover;
+        background-position: center;
+        background-image: linear-gradient(25deg,rgba(0, 229, 255, 0.903),rgba(241, 126, 243, 0.903));
+    }
+
+    .container{
+        margin: 8% auto;
+        background-image: radial-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.25));
+        height: 500px;
+        width: 510px;
+    }
+
+    #errormsg{
+        height: 20px;
+        position: relative;
+        width: 510px;
+        display: none;
+        color: red;
+        animation: marque 5s;
+    }
+
+
+    #bar{
+        height: 50px;
+        width: 170px;
+        background-image: linear-gradient(90deg,rgba(255,0,0,0.9),rgba(255, 154, 2, 0.766));
+        transition: 2s;
+    }
+
+    #progress{
+        height: 50px;
+        width: 510px;
+    }
+
+
+    #progress ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #progress ul li{
+        list-style: none;
+        font-size: large;
+        padding: 5px 35px;
+    }
+
+    #service_form{
+        display: flex;
+        padding: 0 50px 0 50px;
+        background-color: white;
+        height: 450px;
+        width: 410px;
+    }
+
+    input{
+        background-color:rgb(255, 255, 255) ;
+        margin: 25px 0 25px 0;
+        padding: 7px 15px;
+        border: 0;
+        outline: none;
+        border-bottom: 2px solid;
+        width: 90%;
+    }
+
+    ::placeholder{
+        color: black;
+        font-weight: bolder;
+    }
+
+    select{
+        font-size: 15px;
+        padding-left: 15px;padding-right: 15px;padding-top: 5px;padding-bottom: 5px;
+        margin: 25px 0 25px 0;
+        border: 0;
+        border-bottom: 2px solid;
+        background-color: rgba(0255,0255,0255,0.5);
+    }
+
+    .button-next{
+        position: relative;
+        left: 165px;
+        margin-top: 15px;
+        font-size: 22px;
+        padding: 10px 15px 10px 15px;
+        border-radius: 15px;
+        border: 0;
+        background-image: linear-gradient(270deg,rgba(255,0,0,0.9),rgba(255,100,100,0.5));
+    }
+
+    .button-back{
+        position: relative;
+        left: 65px;
+        margin-top: 20px;
+        font-size: 22px;
+        padding: 10px 15px 10px 15px;
+        border-radius: 15px;
+        border: 0;
+        background-image: linear-gradient(90deg,rgba(255,0,0,0.9),rgba(255,100,100,0.5));
+    }
+
+    #form1{
+        display: block;
+        position: relative;
+        height: inherit;
+        width: inherit;
+        margin-top: 35px;
+        animation: fade-in 2s;
+    }
+
+    #form2{
+        display: none;
+        position: relative;
+        height: inherit;
+        width: inherit;
+        margin-top: 35px;
+        animation: fade-in 5s;
+    }
+
+    #form3{
+        display: none;
+        position: relative;
+        height: inherit;
+        width: inherit;
+        margin-top: 35px;
+        animation: fade-in 2s;
+    }
+
+    .btn-container{
+        display: flex;
+    }
+    @keyframes fade-in {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
+    @keyframes marque {
+        0% {left: 240px;}
+        100% {left: 0px; }
+    }
+</style>
+
+<script>
+    var x=document.getElementById("form1");
+    var y=document.getElementById("form2");
+    var z=document.getElementById("form3");
+    var a=document.getElementById("errormsg");
+
+    var bar=document.getElementById("bar");
+
+    function next1(){
+        
+        var name1=document.getElementsByName("fname")[0].value;
+        var name2=document.getElementsByName("sname")[0].value;
+        var age=document.getElementsByName("age")[0].value;
+        var gender=document.getElementsByName("gender")[0].value;
+                
+        if(name1!=='' && name2!=='' && age!='' && gender!=='None'){
+            a.style.display="none";
+            bar.style.width="340px";
+            x.style.display="none";
+            y.style.display="block";
+        }else{
+            a.style.display="block";
+            setTimeout("a.style.display='none'",5000);
+        }
+        
+    }
+
+    function next2(){
+         
+        var email=document.getElementsByName("email")[0].value;
+        var phoneno=document.getElementsByName("phone")[0].value;
+
+        
+        if(email!=='' && phoneno!=='' && phoneno.toString().length===10){
+            bar.style.width="510px";
+            y.style.display="none";
+            z.style.display="block";
+        }else{
+            a.style.display="block";
+            setTimeout("a.style.display='none'",5000);
+        }
+    }
+
+    function back1(){
+        bar.style.width="170px";
+        y.style.display="none";
+        x.style.display="block";
+    }
+
+    function back2(){
+        bar.style.width="340px";
+        z.style.display="none";
+        y.style.display="block";
+    }
+</script>
+</html>

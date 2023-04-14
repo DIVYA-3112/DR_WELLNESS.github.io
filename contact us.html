@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact us</title>
+    <style>
+         #navbar ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top:0;
+            left: 0;
+            margin: 0;
+            width: 100%;
+            background-color: antiquewhite;
+            height: 35px;
+        }
+
+        #navbar ul li {
+            color: black;
+            list-style: none;
+            font-size: 1.5rem;
+
+
+        }
+
+        #navbar ul li a {
+            display: block;
+            padding-right: 22px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: black;
+            font-family: "Lobster variant0", Tofu;
+            font-weight: bolder;
+        
+        }
+
+
+        #navbar ul li a:hover {
+            color: blue;
+
+        }
+
+        #navbar::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            height: 5%;
+            width: 100%;
+        }
+
+        #header{
+            width: 100%;
+        }
+        #header img{
+            width: 100%;
+            object-fit: contain;
+        }
+
+         .contact{
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            height: 45%;
+           
+        }
+        p{
+            font-size: 23px;
+            color: darkblue;
+            border-style:ridge;
+            font-weight: bold;
+        }
+
+        img{
+            width: 100%;
+          
+            object-fit: contain;
+        }
+    
+        .con{
+            width: 50%;
+            height: 50%;
+        }
+        .feedback{
+            width: 50%;
+        }
+        h1{
+            color: white;
+            background-color: darkblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .btn{
+            color: black;
+            background-color: rgb(248, 221, 221);
+            border-radius: 2px;
+            font-size: 1.5rem;
+            font-weight: bolder;
+               
+            border-radius: 10px;
+        }
+        .btn:hover{
+            cursor: pointer;
+            color: darkblue;
+        }
+        #footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.rem;
+            background-color: rgb(244, 213, 176);
+            color: black;
+            font-weight: 800;
+            height: 200px;
+        }
+        @media (max-width: 700px){
+            .contact{
+                display: block;
+            }
+            .con,.feedback{
+                width:100%;
+                height: 50%;
+            }
+
+            #map{
+                width: 100%;
+            }
+
+            #navbar ul{
+                height: 25px;
+            }
+
+            #navbar ul li{
+                font-size: 15px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul id="nav">
+            <li id="items"><a href="html code.html">Home</a></li>
+            <li id="items"><a href="about us.html">About Us </a></li>
+            <li id="items"><a href="services.html">Services</a> </a></li>
+
+        </ul>
+
+    </nav>
+    <br>
+    <br>
+    <center>
+    <div id="header">
+
+        <img src="Homepage/logo.png" alt=""  />
+    </div>
+    <br>
+    <br>
+    <div class="contact">
+     
+            <div  id="map" style="width: 100%"><iframe width="95%" height="500" frameborder="0" scrolling="no" marginheight="0"
+                    marginwidth="0"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=IIIT%20nagpur+(Dr%20Wellnes)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a
+                     href="https://www.maps.ie/distance-area-calculator.html">distance maps</a></iframe>
+            </div>
+        
+        <div class="con">
+            <img  src="Contact us/contact us.png" alt="">
+        </div>
+        <div class="con">
+            <img   src="Contact us/details.png" alt="">
+        </div>
+    </div>
+    <h1>Reviews</h1>
+    <div class="contact" >
+        <div class="feedback">
+          <img  src="Contact us/feedback11.png" alt=""/>   
+        </div>
+        <div class="feedback">
+         <img  src="Contact us/feedback22.png" alt=""/>
+        </div>
+    </div>
+    <h1>Want to share your views with us then please  do fill this feedback form </h1>
+    <div id="button">
+        <button class="btn"><a href="feedback.html">Feeback</a></button>
+    </div>
+    <br> 
+    <br>
+    <footer id="footer"> Contact us on 9934561200 Email :- drwellnesscentre12@gmail.com<br>
+        <br> Developed by:- Tanisha Mehta, Nikhil Mishra,Divya Thakkar and Saurabh Shukla.
+    </footer>
+</center>
+</body>
+</html>

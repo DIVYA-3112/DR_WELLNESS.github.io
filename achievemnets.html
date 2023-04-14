@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>achievments</title>
+    <style>
+        #navbar ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top:0;
+            left: 0;
+            margin: 0;
+            width: 100%;
+            background-color: antiquewhite;
+        }
+
+        #navbar ul li {
+            color: black;
+            list-style: none;
+            font-size: 1.5rem;
+
+        }
+
+        #navbar ul li a {
+            display: block;
+            padding: 3px 22px;
+            text-decoration: none;
+            color: black;
+            font-family: "Lobster variant0", Tofu;
+            font-weight: bolder;
+
+        }
+
+
+        #navbar ul li a:hover {
+            color: blue;
+
+        }
+
+        #header{
+            width: 100%;
+        }
+
+        #header img{
+            width: 100%;
+            object-fit: contain;
+        }
+
+        img{
+            width: 100%;
+            object-fit: contain;
+        }
+
+        h1 {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .achievements {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            padding: 0 7px 0 7px;
+        }
+
+        p {
+            font-size: 23px;
+            color: darkblue;
+            border-style:ridge;
+            font-weight: bold;
+            /* font-family:Arial, Helvetica, sans-serif; */
+        }
+
+        #achieve {
+            background-color: darkblue;
+        }
+
+        .c1 {
+            width: 50%;
+        }
+
+        .c1 img{
+            width: 100%;
+        }
+
+        .c2 {
+            width: 50%;
+        }
+        h2{
+            color: darkgreen;
+            background-color: antiquewhite;
+        }
+
+        #footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            background-color: rgb(244, 213, 176);
+            color: black;
+            font-weight: 800;
+            height: 200px;
+        }
+
+        @media (max-width:700px) {
+            .achievements{
+                display: block;
+            }
+
+            #navbar ul li {
+                font-size: 0.65rem;
+                padding: 0;
+            }
+
+            #navbar ul li a {
+                padding-left: 0px;
+            }
+
+            .c1,.c2{
+                width: 100%;
+            }
+
+            p{
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <ul id="nav">
+            <li id="items"><a href="html code.html">Home</a></li>
+            <li id="items"><a href="about us.html">About Us </a></li>
+            <li id="items"><a href="services.html">Services</a> </a></li>
+            <li id="items"><a href="our team.html">Our Team</a></li>
+            <li id="items"><a href="contact us.html">Contact Us</a></li>
+        </ul>
+
+    </nav>
+    <br>
+    <br>
+    <center>
+    <div id="header">
+        <img src="Homepage/logo.png" >
+    </div>
+    <div id="achieve">
+        <h1> Our Achievements</h1>
+    </div>
+    <div class="achievements">
+        <div class="c1">
+            <img src="Certificates/certificate2.png" alt=""  />
+        </div>
+        <div class="c2">
+            <p>This certificate was awarded to Dr Wellness for their outstanding commitment to health and wellness. We
+                have shown exemplary dedication to our commitment of making India healthy.<br>
+                <h2>Given on 11-April-1993</h2>
+            </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="achievements">
+        <div class="c1">
+            <img src="Certificates/certificate3.png" alt=""  />
+        </div>
+        <div class="c2">
+            <p>
+                This certificate was a way to thank and recognize Dr Wellness for all their hard work, dedication, and
+                commitment they have put into maintaining a healthy lifestyle of their customers. Their efforts have
+                been a source of inspiration and guidance for those around them.<br>
+                <h2>Given on 27-August-2004</h2>
+            </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="achievements">
+        <div class="c1">
+            <img src="Certificates/certificate1.png" alt=""  />
+        </div>
+        <div class="c2">
+            <p>By having a strong commitment to health and wellness, Dr Wellness have made a positive impact on their
+                own life, as well as on the lives of those around them. We have demonstrated the importance of taking
+                care of one’s body and mind, and setting a good example for those around us.<br>
+               <h2>Given on 17-September-2010</h2> 
+            </p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <footer id="footer"> Contact us on 9934561200 Email :- drwellnesscentre12@gmail.com<br>
+        <br> Developed by:- Tanisha Mehta, Nikhil Mishra,Divya Thakker and Saurabh Shukla.
+    </footer>
+</center>
+</body>
+
+</html>
